@@ -1,0 +1,26 @@
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}%
+
+\begin{document}
+\pagestyle{empty} %disable headers and footers
+\pagenumbering{roman} %use roman page numbering for the first sites
+\input{setup/frontpage.tex}
+
+\pdfbookmark[1]{Abstract}{label:abstract}
+\pagestyle{fancy} %enable headers and footers again
+\input{setup/abstract.tex}
+
+\pdfbookmark[2]{Contents}{label:contents}
+\pagestyle{fancy} %enable headers and footers again
+\tableofcontents
+
+
+\pagenumbering{arabic} %use arabic page numbering in report
+\input{sections/example.tex}
+
+\printbibliography[heading=bibintoc]%Bibfile
+\label{bib:mybiblio}
+\input{sections/appendix/appendix.tex}
+\end{document}
+\grid
+\grid

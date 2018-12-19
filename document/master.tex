@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\usepackage[table,xcdraw]{xcolor}
+% The standard graphics inclusion package
+\usepackage{graphicx}
+% Set up how figure and table captions are displayed
+\usepackage{caption}
+\captionsetup{%
+  font=footnotesize,% set font size to footnotesize
+  labelfont=bf % bold label (e.g., Figure 3.2) font
+}
+
+\usepackage{array,booktabs}% Make the standard latex tables look so much better
+
+% Select encoding of your inputs.
+\usepackage[utf8]{inputenc}
+\usepackage[english, danish]{babel}
+
+%Setting Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} %delete everything
+\renewcommand{\headrulewidth}{0pt} %remove the horizontal line in the header
+\fancyhead[LE,RO]{\thepage} %page number on all pages
+
+\usepackage[colorlinks]{hyperref}
+
+%"Bibfile"
+\usepackage[backend=bibtex,bibencoding=utf8]{biblatex}
+\usepackage{filecontents}
+\usepackage{url}
+\begin{filecontents*}{general.bib}
+@misc{ref-name,
+    author = {AUTHOR},
+    year = {2018},
+    title = {TITLE},
+    howpublished = {\url{URL}},
+    note = "[Visited, 2018]"
+}
+\end{filecontents*}
+\addbibresource{general.bib}
+
+
+\usepackage{blindtext, xfrac}
+
+\begin{document}
+
+
+This is an example document \cite{ref-name}!
+\newpage
+\printbibliography
+\end{document}
